@@ -38,8 +38,4 @@ Terraform: create new azure service principal
    terraform apply --var-file params.tfvars
    ```
 
-1. destroy Azure resources
-
-   ```Batchfile
-   terraform destroy --var-file params.tfvars
-   ```
+1. The service principal's parameters are output to params_sp.tfvars
