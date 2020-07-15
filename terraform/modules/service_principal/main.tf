@@ -33,12 +33,6 @@ resource "azurerm_role_assignment" "this" {
   depends_on = [azuread_service_principal.this]
 
   scope              = var.scope
-  role_definition_id = data.azurerm_role_definition.this.id
+  role_definition_id = "${var.scope}${data.azurerm_role_definition.this.id}"
   principal_id       = azuread_service_principal.this.id
-
-  lifecycle {
-    ignore_changes = [
-      role_definition_id,
-    ]
-  }
 }
